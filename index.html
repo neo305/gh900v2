@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html manifest="cache.manifest"><head>
-<title>PS4 9.00 FW Host v2.0 by GamerHack</title>
+<title>PS4 9.00 FW Host v2.1 by GamerHack</title>
 <link rel="stylesheet" href="style.css">
 <script src="int64.js"></script>
 <script src="rop.js"></script>
@@ -12,11 +12,11 @@
 function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
 function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cache Installed Successfully ✔";},1000);setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},3000);}window.applicationCache.addEventListener("progress",DLProgress,false);window.applicationCache.oncached=function(e){DisplayCacheProgress();};window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
 </script>
-<h1 id="msgs">PS4 9.00 FW Host v2.0 by GamerHack</h1>
+<h1 id="msgs">PS4 9.00 FW Host v2.0 Mod by laz305</h1>
 <hr>
 <br>
 <h1 style="font-size:18px;color:yellow;">Main Payloads</h1>
-<button class="btn" onclick=load_goldhen2b()> GoldHEN 2.0b </button>
+<button class="btn" onclick=load_goldhen2b()> GoldHEN 2.1 </button>
 <button class="btn" onclick=load_goldhen2b2()> GoldHEN 2.0b2 </button>
 <button class="btn" onclick=load_binloader()> Bin Loader </button>
 <br>
@@ -47,7 +47,7 @@ function DisplayCacheProgress(){setTimeout(function(){window.msgs.innerHTML="Cac
 <button class="btn btn-toolbox" onclick=load_toolbox()> Orbis-Toolbox </button>
 <button class="btn" onclick=load_fanthreshold()> Fan Threshold </button><select id="tempC"></select>&#176;C
 <br><br><br><br><br><br>
-<h1 style="color: yellow;">Special Thanks to:<a href="https://twitter.com/sleirsgoevy" style="color:#f31414; margin-left: 15px;">@sleirsgoevy</a><a style="color:white; margin-left: 15px;">ChendoChap</a><a href="https://twitter.com/SpecterDev" style="color:#f31414; margin-left: 15px;">@SpecterDev</a><a style="color:white; margin-left: 15px;">SiSTR0</a><a href="https://twitter.com/Znullptr" style="color:#f31414; margin-left: 15px;">@Znullptr</a> <a style="color: yellow;">Edit by: <a href="https://twitter.com/laz305" style="color:#f31414; margin-left: 15px;">@laz305</a></h1>
+<h1 style="color: yellow;">Special Thanks to:<a href="https://twitter.com/sleirsgoevy" style="color:#f31414; margin-left: 15px;">@sleirsgoevy</a><a style="color:white; margin-left: 15px;">ChendoChap</a><a href="https://twitter.com/SpecterDev" style="color:#f31414; margin-left: 15px;">@SpecterDev</a><a style="color:white; margin-left: 15px;">SiSTR0</a><a href="https://twitter.com/Znullptr" style="color:#f31414; margin-left: 15px;">@Znullptr</a><a style="color:yellow; margin-left: 15px;"> <a style="color: yellow;">Edit by: <a href="https://twitter.com/laz305" style="color:#f31414; margin-left: 15px;">@laz305</a></h1>
 <script>
 for(var i=40; i<=79; i++){
     var select = document.getElementById("tempC");
@@ -87,12 +87,11 @@ alert("Jailbreak Loaded... Now Send a Payload using the PS4 IP and port 9020");
 msgs.innerHTML="Wait a Moment...";
 }
 
-function load_goldhen2b(){
-msgs.innerHTML="Loading Jailbreak + GoldHEN v2.0b... Please Wait !!!";
-LoadedMSG="GoldHEN v2.0b Loaded...";
-PLfile = "goldhen_2.0b.bin";
+function load_goldhen21(){
+var script = document.createElement('script');script.src = "goldhen_2.1.js";document.getElementsByTagName('head')[0].appendChild(script);
+msgs.innerHTML="Loading GoldHEN v2.1... Please Wait !!!";
 run_jb = "payload";
-load_payload();
+setTimeout(poc,1500);
 }
 
 function load_goldhen2b2(){
